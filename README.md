@@ -75,7 +75,7 @@
 3. Quelle différence existe-t-il entre `--read-only` et `--tmpfs` ?
 > `--read-only` fige l'arborescence de fichier du conteneur.
 >
-> `--tmpfs` donne l'accès une arborescence en RAM
+> `--tmpfs` donne l'accès une arborescence de fichier en RAM
 
 4. Pourquoi un conteneur peut-il avoir besoin de zones inscriptibles malgré un système de fichiers racine en lecture seule ?
 > pour du déboguage (logs)
@@ -83,7 +83,7 @@
 > pour gèrer des fichiers en entrée/sortie et les garder après supression du conteneur (volumes)
 
 5. Ces options suffisent-elles à garantir une isolation parfaite ? Justifiez votre réponse.
-> sous une mauvaise config de droit utilisateur, un attaquant peut prendre le controle via `chmod`
+> les conteneur utilise le même noyeau que la machine hôte -> si une faille au niveau de ce dernier est exploitée , il est possible de compromettre la machine hôte.
 
 
 ---
