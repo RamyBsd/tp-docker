@@ -68,18 +68,22 @@
 
 ## Exercice 4 — Renforcer la sécurité d'un conteneur
 1. Pourquoi est-il préférable d'exécuter une application avec un utilisateur non privilégié ?
->
+> car l'application, dans le cas d'une attaque, se verrait donné les clés du royaume (l'accès à la machine hôte)
 2. Que sont les capacités Linux ?
->
+> lecture / ecriture / execution
 
 3. Quelle différence existe-t-il entre `--read-only` et `--tmpfs` ?
+> `--read-only` fige l'arborescence de fichier du conteneur.
 >
+> `--tmpfs` donne l'accès une arborescence en RAM
 
 4. Pourquoi un conteneur peut-il avoir besoin de zones inscriptibles malgré un système de fichiers racine en lecture seule ?
+> pour du déboguage (logs)
 >
+> pour gèrer des fichiers en entrée/sortie et les garder après supression du conteneur (volumes)
 
 5. Ces options suffisent-elles à garantir une isolation parfaite ? Justifiez votre réponse.
->
+> sous une mauvaise config de droit utilisateur, un attaquant peut prendre le controle via `chmod`
 
 
 ---
