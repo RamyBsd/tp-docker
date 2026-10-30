@@ -54,7 +54,7 @@
 >
 > pas d'info critique laissée
 >
-> pas d'alteration du conteneur 
+> pas d'alteration du conteneur
 
 5. Quelles précautions faut-il prendre avant d'utiliser une image `scratch` en production ?
 > que le binaire executé est lancé dès le démarrage du conteneur
@@ -69,8 +69,9 @@
 ## Exercice 4 — Renforcer la sécurité d'un conteneur
 1. Pourquoi est-il préférable d'exécuter une application avec un utilisateur non privilégié ?
 > car l'application, dans le cas d'une attaque, se verrait donné les clés du royaume (l'accès à la machine hôte)
+
 2. Que sont les capacités Linux ?
-> lecture / ecriture / execution
+> des droits d'admisnistration propre à l'admin (`root`) du système, comme changer le propiétaire d'un fichier, tuer des processus, etc...
 
 3. Quelle différence existe-t-il entre `--read-only` et `--tmpfs` ?
 > `--read-only` fige l'arborescence de fichier du conteneur.
