@@ -91,19 +91,21 @@
 
 ## Exercice 5 — Diagnostiquer un conteneur qui se termine anormalement
 1. Quelle différence existe-t-il entre un conteneur arrêté et un conteneur supprimé ?
+> un conteneur arrếté peut être remis en marche en reprenant sa couche insriptible par dessus la couche image via `docker start`.
 >
+> un conteneur supprimé implique la suppression de sa couche inscriptible et des données qui s'y trouvaient. Le relancer, c'est créer un nouveau conteneur depuis la même image (`docker run`).
 
 2. Que signifie un code de sortie différent de zéro ?
->
+> Cela signifie qu'une erreur est survenue (ou que l'on a configuré une sortie custom).
 
 3. Quelle différence existe-t-il entre les sorties standard et d'erreur ?
->
+> les sorties standards et d'erreur sont deux flux différents facilement identifiables dans le système. ce qui permet une analyse de l'exection plus efficace.
 
 4. Pourquoi les journaux sont-ils utiles lorsqu'un conteneur se termine trop rapidement ?
->
+> Ils permettent le déboguage en facilitant la recherche du point d'echec (le moment de l'execution où l'erreur survient)
 
 5. Pourquoi faut-il examiner le code de sortie au lieu de se fier uniquement au message d'erreur ?
->
+> di
 
 
 ---
