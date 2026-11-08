@@ -105,7 +105,7 @@
 > Ils permettent le déboguage en facilitant la recherche du point d'echec (le moment de l'execution où l'erreur survient)
 
 5. Pourquoi faut-il examiner le code de sortie au lieu de se fier uniquement au message d'erreur ?
-> di
+> car il se peut que le conteneur n'ait pas pu loggé l'erreur qui a induit son arrêt. et le code peut être customisé de sorte à reconnaitre rapidement le type d'erreur.
 
 
 ---
