@@ -113,20 +113,25 @@
 ## Exercice 6 — Configurer la rotation des journaux
 
 1. Pourquoi des journaux trop volumineux peuvent-ils poser problème ?
->
+> 1. ils finissent par prendre un espace non négligeable.
+> 2. il devient difficile d'y chercher une info précise.
+> 3. les logs peuvent finir par surcharger la machine hôte.
 
 2. À quoi sert un pilote de journaux Docker ?
->
+> c'est le méchanisme qui gère les logs docker (taille max, rotation, libellé, etc...). Par défaut c'est `json-file logging driver` qui prend cette tâche.
 
 3. Quelle différence existe-t-il entre la consultation des journaux avec `docker logs` et leur stockage sur le long terme ?
+> Les journaux `docker logs` subissent une rotation impliquant leur disparition définitive au bout d'un certain temps. Ces logs disparaissent avec le conteneur suite à un `docker rm`.
 >
+> Le stockage sur le long terme revient à archiver des journaux afin qu'ils perdurent en dehors du cycle de vie des logs docker. les rendant consumtables après la supression du conteneur (pour un  audit par exemple)
 
 4. Pourquoi la rotation des journaux est-elle importante sur un serveur ?
->
+> elle permet de limiter taille max des logs d'un conteneur ("max-size"="1m" et max-file="2" => 2Mo)
 
 5. Pourquoi faut-il choisir une stratégie de journalisation adaptée à l'environnement de production ?
->
-
+> afin de pouvoir se retrouver rapidement et efficacement dans les logs:
+>   se débarasser du superflu. (ex: des logs outdated qui ne sont plus pertinents)
+>   maintenir une empreinte disque raisonnable.
 ---
 
 ## Exercice 7 — Explorer les processus et les modifications d'un conteneur en fonctionnement
