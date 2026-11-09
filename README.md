@@ -137,16 +137,30 @@
 ## Exercice 7 — Explorer les processus et les modifications d'un conteneur en fonctionnement
 
 1. Quelle différence existe-t-il entre `docker exec` et `docker run` ?
+> `docker run` est utilisé pour créer un conteneur à partir d'une image.
 >
+> `docker exec` permet de lancer un nouveau processus sur un conteneur en cours d'execution.
 
 2. À quoi sert `docker top` ?
->
+> il permet de lister les processus en cours d'execution sur un conteneur.
 
 3. Pourquoi `docker diff` peut-il être utile pendant un diagnostic ?
->
+> les changements apportés à l'image initiale peuvent être un bon indicateur du déroulé d'execution du conteneur.
 
 4. Quelles informations fournit `docker stats` ?
->
+> elle fournit la consommation matériel des conteneurs (CPU, RAM, transferts des supports de stockages, nbr de processus enfants) à l'image du gestionnaire de tâche.
 
 5. Pourquoi faut-il éviter de modifier manuellement un conteneur en production sans documenter les changements ?
+> car le chagement n'est pas facilement reversible
 >
+> aucun log n'est enregistré pour ces changements
+>
+> ces changements disparaissent à la supression du conteneur (`docker rm`) => il vaut mieux les appliquer à un DockerFile
+
+
+## Conclution
+à travers ce tp, nous avons pu voir qu'avec une bonne configuration, il est parfaitement possible de créer des conteneurs:
+    . dont on maitrise l'execution (debug, log et gestion des processus)
+    . optimisés (de taille minimale)
+    . qui n'affecte pas la machine hôte (isolation, sécurité et gestion mémoire)
+    . facilement reproductible (DockerFile)
